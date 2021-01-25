@@ -178,6 +178,13 @@ FriendlyChat.prototype.setImageUrl = function(imageUri, imgElement) {
 // userName
 // receptor
 // nameReceptor
+
+
+firebase.database().ref("individual").orderByKey().startAt("1").on("child_added", function (snapshot) {
+  console.log(snapshot.val());
+  console.log("Hi from listener 001");
+})
+
 var chat = '';
 const clickUsers = function(ev) {
   // $("#chatName").html(decodeURIComponent(name))
